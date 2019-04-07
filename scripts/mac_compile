@@ -1,0 +1,1 @@
+g++ -o perlimp perlimp.cpp -fno-common -DPERL_DARWIN -mmacosx-version-min=10.14 -fno-strict-aliasing -pipe -fstack-protector-strong -I/usr/local/include -DPERL_USE_SAFE_PUTENV -I/usr/local/Cellar/perl/5.28.0/lib/perl5/5.28.0/darwin-thread-multi-2level/CORE -L/usr/local/Cellar/perl/5.28.0/lib/perl5/5.28.0/darwin-thread-multi-2level/CORE -lpthread -ldbm -ldl -lm -lutil -lc -lperl
