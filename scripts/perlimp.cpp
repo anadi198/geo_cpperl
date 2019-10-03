@@ -36,7 +36,7 @@ static void PerlLocate()
         /* DynaLoader is a special case */
         newXS("DynaLoader::boot_DynaLoader", boot_DynaLoader, file);
  }
-int main (int argc, char **argv, char **env)
+int main (int argc, char **argv, char **env)                /* Third argument is to specify the environment */
  {
    char *my_argv[] = { (char *)"", (char *)"geo_ip.pl" };
    PERL_SYS_INIT3(&argc,&argv,&env);
@@ -45,7 +45,7 @@ int main (int argc, char **argv, char **env)
    perl_parse(my_perl, xs_init, 2, my_argv, (char **)NULL);
    PL_exit_flags |= PERL_EXIT_DESTRUCT_END;
    perl_run(my_perl);
-   PerlLocate();                                                        /* Find the location */
+   PerlLocate();                                                        /* Find the location using IP address of the PC */
    perl_destruct(my_perl);
    perl_free(my_perl);
    PERL_SYS_TERM();
