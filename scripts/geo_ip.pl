@@ -14,5 +14,5 @@ use GeoIP2::Database::Reader;
  
     my $city = $reader->city( ip => $ip );
     my $city_rec = $city->city();
-    $city_rec->name(); #implicitly return city name to caller of subroutine.
+    $city_rec->name();                                    #implicitly return city name to caller of subroutine.
   }
